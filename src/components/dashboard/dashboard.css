@@ -1,0 +1,7 @@
+.dashboard_form {
+    display: none;
+}
+.dashboard_form.active {
+    display: flex;
+    justify-content: center;
+}
