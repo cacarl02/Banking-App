@@ -5,7 +5,7 @@ const Dashboard = () => {
     const [accountBalance, setAccountBalance] = useState(10000)
     const [popup, setPopup] = useState(false)
     const [inputValue, setInputValue] = useState({
-        balance: "",
+        amount: "",
         expenses: "",
         transactionList: [],
         expenseList: []
@@ -18,33 +18,33 @@ const Dashboard = () => {
     // const date = new Date();
     // // const createTransactionList = () => {
     // //     const list = inputValue.transactionList
-    // //     list.push([date, inputValue.balance])
+    // //     list.push([date, inputValue.amount])
     // // }
     const addMoney = () => {
         setAccountBalance (accountBalance + +inputValue)
-        setInputValue({...inputValue, balance:""})
+        setInputValue({...inputValue, amount:""})
         showPopup()
     }
     const subtractMoney = () => {
         setAccountBalance (accountBalance - +inputValue)
-        setInputValue({...inputValue, balance:""})
+        setInputValue({...inputValue, amount:""})
         showPopup()
     }
-    const transferMoney = () => {
-        setAccountBalance (accountBalance - +inputValue)
-        setInputValue({...inputValue, balance:""})
+    // const transferMoney = () => {
+    //     setAccountBalance (accountBalance - +inputValue)
+    //     setInputValue({...inputValue, amount:""})
 
-    }
-    const onTransactionHistory = () => {
+    // }
+    // const onTransactionHistory = () => {
 
-    }
+    // }
     const addExpense = () => {
         setAccountBalance (accountBalance - +inputValue)
-        setInputValue({...inputValue, expenses:""})
+        setInputValue({...inputValue, amount:"", expenses:""})
         showPopup()
 
         const list = inputValue.expensesList;
-        list.push([inputValue.balance, inputValue.expenses])
+        list.push([inputValue.amount, inputValue.expenses])
         
     }
 
@@ -68,7 +68,7 @@ const Dashboard = () => {
                 inputValue.expenseList.length ?
                 inputValue.expenseList.map((value, index) => (
                         <div key={index} className='accountlist'>
-                            <span>{value.inputValue.balance}</span>
+                            <span>{value.inputValue.amount}</span>
                             <span>{value.inputValue.expenses}</span>
                         </div>
                         )
@@ -77,11 +77,11 @@ const Dashboard = () => {
                 <button onClick={showPopup}>Add Expenses</button>
             </div>
             <form onSubmit={submitHandler} className={popup ? 'dashboard_form active': 'dashboard_form'}>
-                <input name="balance" type="number" value={inputValue.balance} onChange={(e) => setInputValue(e.target.value)}/>
+                <input name="amount" type="number" value={inputValue.amount} onChange={(e) => setInputValue(e.target.value)}/>
                 <button onClick={addMoney}>sige add ka</button>
                 <button onClick={subtractMoney}>sige bawas ka</button>
                 <button onClick={addExpense}>sige gastos pa</button>
-                <input type="text" name="expense" value={inputValue.expenseList} />
+                <input type="text" name="expenses" value={inputValue.expenseList} />
             </form>
             <div>
 

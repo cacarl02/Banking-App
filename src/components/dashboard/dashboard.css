@@ -5,3 +5,88 @@
     display: flex;
     justify-content: center;
 }
+
+.dashboard_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.card_content {
+    padding: 10px 30px;
+    width: 300px;
+    background-color: rgb(232, 203, 150);
+    font-size: 28px;
+}
+
+.bank_buttons {
+    font-size: 24px;
+    padding: 10px;
+    margin: 20px 10px;
+}
+
+.transaction_table {
+    display: flex;
+    border: 1px solid black;
+}
+
+.transaction_content {
+    padding: 5px 10px;
+    border: 1px solid black;
+}
+
+.form_popup {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_popup.active {
+    display: flex;
+}
+
+.form_content {
+    height: 300px;
+    width: 350px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+#form label {
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+#form input {
+    margin: 10px auto 0 auto;
+    display: block;
+    width: 80%;
+    padding: 8px;
+}
+
+#form #submit {
+    border-radius: 25px;
+    font-size: 1.5rem;
+    color: white;
+    border: 2px solid transparent;
+    background-color: rgb(6, 53, 91);
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.close_btn {
+    position: absolute;
+    width: 15px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
