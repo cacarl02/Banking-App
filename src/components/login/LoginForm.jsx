@@ -11,7 +11,7 @@ const LoginForm = () => {
         pwerror: ""
     })
     const validate = () => {
-        if(loginData.username.length<=4) {
+        if(loginData.username.length<=3) {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 usererror: 'Minimum of 4 characters'
@@ -23,7 +23,7 @@ const LoginForm = () => {
             }))
         }
 
-        if(loginData.password.length<=4) {
+        if(loginData.password.length<=3) {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 pwerror: 'Minimum of 4 characters'
@@ -44,7 +44,11 @@ const LoginForm = () => {
         color: 'red'
     }
     return (
-        <form className="form" onSubmit={submitHandler}>
+        <form className="login_content" onSubmit={submitHandler}>
+            <div>
+                <h1>The Bank</h1>
+                <h2>Login</h2>
+            </div>
             <h3>Username:</h3>
             <input 
 				type="text"
