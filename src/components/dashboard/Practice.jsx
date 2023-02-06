@@ -42,11 +42,11 @@ function TransactionHistory(props) {
                 {
                 history.length ?
                 history.map((txn, index) => (
-                        <div key={index} className='accountlist'>
-                            <span>{txn.number}</span> 
-                            <span>{txn.date}</span>                           
-                            <span>{txn.transaction}</span>
-                            <span>{txn.amount}</span>
+                        <div key={index} className='transaction_table'>
+                                <div className='transaction_content'>{txn.number}</div>
+                                <div className='transaction_content'>{txn.date}</div>
+                                <div className='transaction_content'>{txn.transaction}</div>
+                                <div className='transaction_content'>{txn.amount}</div>
                         </div>
                         )
                 ) : <span>No transactions yet.</span>
@@ -78,11 +78,11 @@ function BudgetHistory(props) {
             {
                 history2.length ?
                 history2.map((txn, index) => (
-                        <div key={index} className='accountlist'>
-                            <span>{txn.number}</span> 
-                            <span>{txn.date}</span>                           
-                            <span>{txn.transaction}</span>
-                            <span>{txn.amount}</span>
+                        <div key={index} className='transaction_table'>
+                                <div className='transaction_content'>{txn.number}</div>
+                                <div className='transaction_content'>{txn.date}</div>
+                                <div className='transaction_content'>{txn.transaction}</div>
+                                <div className='transaction_content'>{txn.amount}</div>
                         </div>
                         )
                 ) : <span>No expenses yet.</span>

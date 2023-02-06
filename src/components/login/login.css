@@ -1,0 +1,9 @@
+
+
+.regform {
+    display: none;
+}
+
+.regform.active {
+    display: flex;
+}

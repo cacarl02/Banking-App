@@ -6,14 +6,45 @@ const LoginForm = () => {
                 username:"",
                 password:""
     })
+    const [errors, setErrors] = useState({
+        usererror: "",
+        pwerror: ""
+    })
+    const validate = () => {
+        if(loginData.username.length<=4) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                usererror: 'Minimum of 4 characters'
+            }))
+        } else {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                usererror: ''
+            }))
+        }
 
-    const loginHandler = (e) => {
-        e.preventDefault();
-
-
+        if(loginData.password.length<=4) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                pwerror: 'Minimum of 4 characters'
+            }))
+        } else {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                pwerror: ''
+            }))
+        }
+    }
+    const submitHandler = (e) => {
+        e.preventDefault()
+        validate()
+        
+    }
+    const errorStyle = {
+        color: 'red'
     }
     return (
-        <form className="form" onSubmit={loginHandler}>
+        <form className="form" onSubmit={submitHandler}>
             <h3>Username:</h3>
             <input 
 				type="text"
@@ -23,6 +54,7 @@ const LoginForm = () => {
                 value={loginData.username}
                 onChange={(e) => handleChange(e, setLoginData)}
             />
+            <div style={errorStyle}>{errors.usererror}</div>
             <h3>Password:</h3>
             <input 
 				type="password"
@@ -31,6 +63,7 @@ const LoginForm = () => {
                 value={loginData.password}
                 onChange={(e) => handleChange(e, setLoginData)}
             />
+            <div style={errorStyle}>{errors.pwerror}</div>
             <button type="submit">Login</button>
         </form>
     )
